@@ -26,8 +26,8 @@ func (apiCfg *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Reques
 
 	user, err := apiCfg.DB.CreateUser(r.Context(), database.CreateUserParams{
 		ID:        uuid.New(),
-		CreatedAt: time.Now().UTC(),
-		UpdatedAt: time.Now().UTC(),
+		CreatedAt: time.Now().Local(),
+		UpdatedAt: time.Now().Local(),
 		Name:      params.Name,
 	})
 	if err != nil {
